@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CategoriesTab extends StatelessWidget {
-  static const String routeName ="categories_screen";
+class ChartTab extends StatelessWidget {
+  static const String routeName ="chart_screen";
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quiz1/screen1/home_screen.dart';
 import 'package:quiz1/screen1/mental_health_app.dart';
+import 'package:quiz1/screen2/work_out_app.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(
+      MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,8 +15,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes:{
         MentalHealthApp.routeName : (buildcontext) => MentalHealthApp(),
+        WorkOutApp.routeName : (buildcontext) => WorkOutApp(),
+
       },
-      initialRoute:MentalHealthApp.routeName ,
+      initialRoute:WorkOutApp.routeName ,
     );
   }
 }
