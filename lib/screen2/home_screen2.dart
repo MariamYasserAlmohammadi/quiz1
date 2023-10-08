@@ -4,6 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:quiz1/screen1/calender_tab.dart';
 import 'package:quiz1/screen1/categories_tab.dart';
 import 'package:quiz1/screen1/user_tab.dart';
+import 'package:quiz1/screen2/Ilist_item_data.dart';
+import 'package:quiz1/screen2/list_item_widget.dart';
 
 class HomeScreen2 extends StatefulWidget {
   static const routeName = "homescreen2";
@@ -13,9 +15,13 @@ class HomeScreen2 extends StatefulWidget {
 }
 
 class _HomeScreen2State extends State<HomeScreen2> {
+  List<ListItemData> listItemsData = [
+  ListItemData("assets/images/screen2/y1.png","7 days","Morning Yoga","Improve Mental focus","30 mins"),
+  ListItemData("assets/images/screen2/y2.png","3 days","Plank Exercise","Improve posture and stability","30 mins"),
+  ListItemData("assets/images/screen2/y1.png","7 days","Morning Yoga","Improve Mental focus","30 mins"),
+  ];
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
 
       body: Padding(
@@ -30,7 +36,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                   backgroundColor: Colors.transparent,
                   radius: 28,
                   backgroundImage:
-                      AssetImage("assets/images/screen2/userPhoto.png"),
+                  AssetImage("assets/images/screen2/userPhoto.png"),
                 ),
                 SizedBox(
                   width: 12,
@@ -77,8 +83,8 @@ class _HomeScreen2State extends State<HomeScreen2> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: Color(0xffF8F9FC)
-                  // Color(0xffF8F9FC),
-                  ),
+                // Color(0xffF8F9FC),
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -115,21 +121,17 @@ class _HomeScreen2State extends State<HomeScreen2> {
               ),
             ),
             SizedBox(height: 16,),
-           TabBar(tabs: [
-
-           ]),
-           TabBarView(children: [
-
-           ]),
-           Expanded(
-             child: ListView.builder(
-                  itemCount: 3,
-                 itemBuilder: (Buildcontext , int){
-                   return grayContainerWidget("assets/images/screen2/y1.png","7 days","Morning Yogs","Improve Mental focus","10 mins");
-
-
-                 }),
-           )
+            // TabBar(tabs: [
+            // ]),
+            // TabBarView(children: [
+            // ]),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: listItemsData.length,
+                  itemBuilder: (Buildcontext, index) {
+                    return ListItemWidget(listItemsData[index]);
+                  }),
+            )
 
 
           ],
@@ -137,6 +139,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
       ),
     );
   }
+
 // List<Widget> t33=[
 //   grayContainerWidget("assets/images/screen2/y1.png","7 days","Morning Yogs","Improve Mental focus","10 mins");
 // ];
@@ -186,77 +189,9 @@ class _HomeScreen2State extends State<HomeScreen2> {
       ],
     );
   }
-  Widget grayContainerWidget(String imagePath, String t1, String t2, String t3,String t4){
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 24),
-      padding: EdgeInsets.all(24),
-      height: 174,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Color(0xffEAECF5),
-        borderRadius: BorderRadius.circular(8),
-        //Color(0xffEAECF5),
-      ),
-      child: Row(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(99),
 
-                    color: Colors.white
-                ),
-                child: Text("$t1 days"),
-              ),
-              SizedBox(
-                height: 12,
-              ),
-              Text(t2,
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black),
-              ),
-              SizedBox(
-                height: 4,
-              ),
-              Text(
-                t3,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
-                ),
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Row(
-                children: [
-                  Image.asset(
-                      "assets/images/screen2/clock.png"),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    t4,
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
-          Image.asset(
-            imagePath ,),
-        ],
-      ),
-    );
+  Widget buildListItem(BuildContext context ,int index) {
+    return ListItemWidget(listItemsData[index]);
   }
+
 }
