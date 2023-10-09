@@ -22,119 +22,142 @@ class _HomeScreen2State extends State<HomeScreen2> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
 
-      body: Padding(
-        padding: const EdgeInsets.all(32),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  radius: 28,
-                  backgroundImage:
-                  AssetImage("assets/images/screen2/userPhoto.png"),
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Hello , Jade",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      "Ready to Workout?",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-                Spacer(),
-                badges.Badge(
-                  badgeContent: Text('1'),
-                  child: Stack(
-                    children: [
-                      buildIconWithBorder(24, Colors.black),
-                      buildIconWithBorder(20, Colors.white),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            Container(
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Color(0xffF8F9FC)
-                // Color(0xffF8F9FC),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: Padding(
+          padding: const EdgeInsets.all(32),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  grayContainerItemWidget("assets/images/screen2/heart.png",
-                      "Heart Rate", "81", "BPM"),
-                  VerticalDivider(
-                    thickness: 2,
-                    width: 10,
-                    color: Color(0xffD9D9D9),
+                  CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    radius: 28,
+                    backgroundImage:
+                    AssetImage("assets/images/screen2/userPhoto.png"),
                   ),
-                  grayContainerItemWidget(
-                      "assets/images/screen2/list.png", "To-do", "32.5", "%"),
-                  VerticalDivider(
-                    thickness: 2,
-                    width: 10,
-                    color: Color(0xffD9D9D9),
+                  SizedBox(
+                    width: 12,
                   ),
-                  grayContainerItemWidget("assets/images/screen2/fire.png",
-                      "Calo", "1000", "Cal"),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Hello , Jade",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 4,
+                      ),
+                      Text(
+                        "Ready to Workout?",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  badges.Badge(
+                    badgeContent: Text('1'),
+                    child: Stack(
+                      children: [
+                        buildIconWithBorder(24, Colors.black),
+                        buildIconWithBorder(20, Colors.white),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-              width: double.infinity,
-              height: 82,
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            Text(
-              "Workout Program",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
+              SizedBox(
+                height: 24,
               ),
-            ),
-            SizedBox(height: 16,),
-            // TabBar(tabs: [
-            // ]),
-            // TabBarView(children: [
-            // ]),
-            Expanded(
-              child: ListView.builder(
-                  itemCount: listItemsData.length,
-                  itemBuilder: (Buildcontext, index) {
-                    return ListItemWidget(listItemsData[index]);
-                  }),
-            )
+              Container(
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: Color(0xffF8F9FC)
+                  // Color(0xffF8F9FC),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    grayContainerItemWidget("assets/images/screen2/heart.png",
+                        "Heart Rate", "81", "BPM"),
+                    VerticalDivider(
+                      thickness: 2,
+                      width: 10,
+                      color: Color(0xffD9D9D9),
+                    ),
+                    grayContainerItemWidget(
+                        "assets/images/screen2/list.png", "To-do", "32.5", "%"),
+                    VerticalDivider(
+                      thickness: 2,
+                      width: 10,
+                      color: Color(0xffD9D9D9),
+                    ),
+                    grayContainerItemWidget("assets/images/screen2/fire.png",
+                        "Calo", "1000", "Cal"),
+                  ],
+                ),
+                width: double.infinity,
+                height: 82,
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Text(
+                "Workout Program",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(height: 16,),
+              TabBar(
+                indicatorColor:Color(0xff363F72),
+               // dividerColor: Color(0xff363F72),
+                labelColor: Color(0xff363F72),
+                unselectedLabelColor: Color(0xff667085),
+                isScrollable: true,
+                tabs: [
+                  Tab(child: Text('All Type',style: TextStyle(
+                    fontSize:16 ,
+                    fontWeight: FontWeight.w500,
+                  ),)),
+                  Tab(child: Text('Full Body',style: TextStyle(
+                    fontSize:16 ,
+                    fontWeight: FontWeight.w500,
+                  ),)),
+                  Tab(child: Text('Upper',style: TextStyle(
+                    fontSize:16 ,
+                    fontWeight: FontWeight.w500,
+                  ),)),
+                  Tab(child: Text('Lower',style: TextStyle(
+                    fontSize:16 ,
+                    fontWeight: FontWeight.w500,
+                  ),)),
+                ],
+              ),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: listItemsData.length,
+                    itemBuilder: (Buildcontext, index) {
+                      return ListItemWidget(listItemsData[index]);
+                    }),
+              ),
 
-
-          ],
+            ],
+          ),
         ),
       ),
     );
