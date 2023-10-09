@@ -148,6 +148,30 @@ class _HomeScreen2State extends State<HomeScreen2> {
                   ),)),
                 ],
               ),
+              // TabBarView(
+              //   children: [
+              //     ListView.builder(
+              //         itemCount: listItemsData.length,
+              //         itemBuilder: (Buildcontext, index) {
+              //           return ListItemWidget(listItemsData[index]);
+              //         }),
+              //     ListView.builder(
+              //         itemCount: listItemsData.length,
+              //         itemBuilder: (Buildcontext, index) {
+              //           return ListItemWidget(listItemsData[index]);
+              //         }),
+              //     ListView.builder(
+              //         itemCount: listItemsData.length,
+              //         itemBuilder: (Buildcontext, index) {
+              //           return ListItemWidget(listItemsData[index]);
+              //         }),
+              //     ListView.builder(
+              //         itemCount: listItemsData.length,
+              //         itemBuilder: (Buildcontext, index) {
+              //           return ListItemWidget(listItemsData[index]);
+              //         }),
+              //   ],
+              // ),
               Expanded(
                 child: ListView.builder(
                     itemCount: listItemsData.length,
